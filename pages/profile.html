@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Accessible enterprise dashboard"><title>Profile - Enterprise Dashboard</title>
+<link rel="stylesheet" href="../css/dashboard.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="app-shell">
+<header class="site-header"><a class="brand" href="../index.html">Enterprise Dashboard</a>
+<div class="header-actions"><a href="profile.html">Account</a><button type="button" data-open-dialog aria-haspopup="dialog">Help</button></div></header>
+<aside class="sidebar"><h2>Workspace</h2><nav aria-label="Dashboard navigation"><ul><li><a href="../index.html">Overview</a></li><li><a href="reports.html">Reports</a></li><li><a href="profile.html" aria-current="page">Profile</a></li></ul></nav></aside>
+<main class="main" id="main-content"><header class="page-header"><div><h1>Profile</h1><p>Manage account information and preferences.</p></div></header>
+<section class="card" aria-labelledby="profile-heading"><h2 id="profile-heading">Account details</h2>
+<p id="form-help">Fields marked required must be completed before saving.</p>
+<form id="profile-form" method="post" action="#" aria-describedby="form-help">
+<fieldset><legend>Personal information</legend><div class="form-grid">
+<div class="field"><label for="first-name">First name</label><input id="first-name" name="first-name" type="text" autocomplete="given-name" required minlength="2" maxlength="50"></div>
+<div class="field"><label for="last-name">Last name</label><input id="last-name" name="last-name" type="text" autocomplete="family-name" required minlength="2" maxlength="50"></div>
+<div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" pattern="[0-9+() -]{7,20}" aria-describedby="phone-help"><span id="phone-help" class="muted">Use digits, spaces, parentheses, +, or hyphens.</span></div>
+<div class="field full"><label for="bio">Short bio</label><textarea id="bio" name="bio" rows="4" maxlength="500"></textarea></div>
+</div></fieldset>
+<fieldset><legend>Notifications</legend><label class="checkbox-row"><input type="checkbox" name="alerts" checked> Receive operational alerts</label></fieldset>
+<p id="form-status" class="status" role="status" aria-live="polite">No changes saved.</p>
+<button type="submit">Save profile</button>
+</form></section></main>
+<footer class="site-footer"><small>&copy; 2026 Enterprise Dashboard. Internal use.</small></footer>
+</div><dialog id="confirm-dialog" aria-labelledby="dialog-title"><div class="dialog-content">
+<h2 id="dialog-title">Dashboard help</h2><p>Use the sidebar to move between dashboard areas. Press Escape to close this dialog.</p>
+<div class="dialog-actions"><button type="button" class="secondary" data-close-dialog>Close</button></div></div></dialog><script src="../js/dashboard.js"></script></body></html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Accessible enterprise dashboard"><title>Enterprise Dashboard</title><link rel="stylesheet" href="css/dashboard.css"></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a><div class="app-shell">
+<header class="site-header"><a class="brand" href="index.html">Enterprise Dashboard</a><div class="header-actions"><a href="pages/profile.html">Account</a><button type="button" data-open-dialog aria-haspopup="dialog">Help</button></div></header>
+<aside class="sidebar"><h2>Workspace</h2><nav aria-label="Dashboard navigation"><ul><li><a href="index.html" aria-current="page">Overview</a></li><li><a href="pages/reports.html">Reports</a></li><li><a href="pages/profile.html">Profile</a></li></ul></nav></aside>
+<main class="main" id="main-content"><header class="page-header"><div><h1>Overview</h1><p>Operational metrics and recent activity.</p></div><button type="button" data-open-dialog aria-haspopup="dialog">Open dialog</button></header>
+<section aria-labelledby="metrics-heading"><h2 id="metrics-heading">Key metrics</h2><div class="grid">
+<article class="card"><h3>Revenue</h3><p class="metric">$84,240</p><p class="muted">Current month</p></article>
+<article class="card"><h3>Customers</h3><p class="metric">2,481</p><p class="muted">Active accounts</p></article>
+<article class="card"><h3>Conversion</h3><p class="metric">6.4%</p><p class="muted">Last 30 days</p></article>
+<article class="card"><h3>Incidents</h3><p class="metric">3</p><p class="muted">Open incidents</p></article></div></section>
+<section style="margin-top:1.5rem" aria-labelledby="activity-heading"><h2 id="activity-heading">Recent activity</h2><div class="table-wrap"><table>
+<caption>Recent enterprise activity</caption><thead><tr><th scope="col">Activity</th><th scope="col">Owner</th><th scope="col">Status</th><th scope="col">Updated</th></tr></thead>
+<tbody><tr><th scope="row">Quarterly report</th><td>Finance</td><td>Complete</td><td>Today</td></tr><tr><th scope="row">Security review</th><td>IT</td><td>In progress</td><td>Yesterday</td></tr><tr><th scope="row">Customer import</th><td>Operations</td><td>Pending</td><td>Yesterday</td></tr></tbody></table></div></section>
+</main><footer class="site-footer"><small>&copy; 2026 Enterprise Dashboard. Internal use.</small></footer></div>
+<dialog id="confirm-dialog" aria-labelledby="dialog-title"><div class="dialog-content"><h2 id="dialog-title">Dashboard help</h2><p>Use the sidebar to move between dashboard areas. Press Escape to close this dialog.</p><div class="dialog-actions"><button type="button" class="secondary" data-close-dialog>Close</button></div></div></dialog>
+<script src="js/dashboard.js"></script></body></html>

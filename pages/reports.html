@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Accessible enterprise dashboard"><title>Reports - Enterprise Dashboard</title>
+<link rel="stylesheet" href="../css/dashboard.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="app-shell">
+<header class="site-header"><a class="brand" href="../index.html">Enterprise Dashboard</a>
+<div class="header-actions"><a href="profile.html">Account</a><button type="button" data-open-dialog aria-haspopup="dialog">Help</button></div></header>
+<aside class="sidebar"><h2>Workspace</h2><nav aria-label="Dashboard navigation"><ul><li><a href="../index.html">Overview</a></li><li><a href="reports.html" aria-current="page">Reports</a></li><li><a href="profile.html">Profile</a></li></ul></nav></aside>
+<main class="main" id="main-content"><header class="page-header"><div><h1>Reports</h1><p>Filter and review operational records.</p></div></header>
+<section class="card" aria-labelledby="filter-heading"><h2 id="filter-heading">Report filters</h2>
+<form method="get" action="reports.html"><fieldset><legend>Date and status</legend><div class="form-grid">
+<div class="field"><label for="from">From date</label><input id="from" name="from" type="date" required></div>
+<div class="field"><label for="to">To date</label><input id="to" name="to" type="date" required></div>
+<div class="field"><label for="status">Status</label><select id="status" name="status"><option value="">All statuses</option><option>Complete</option><option>In progress</option><option>Pending</option></select></div>
+<div class="field"><label for="owner">Owner</label><input id="owner" name="owner" type="text" minlength="2" maxlength="80" autocomplete="organization"></div>
+</div></fieldset><p><button type="submit">Apply filters</button></p></form></section>
+<section style="margin-top:1.5rem" aria-labelledby="report-table-heading"><h2 id="report-table-heading">Report results</h2>
+<div class="table-wrap"><table><caption>Filtered report results</caption><thead><tr><th scope="col">Report</th><th scope="col">Owner</th><th scope="col">Status</th><th scope="col">Date</th></tr></thead>
+<tbody><tr><th scope="row">Revenue report</th><td>Finance</td><td>Complete</td><td>2026-10-01</td></tr>
+<tr><th scope="row">Security report</th><td>IT</td><td>In progress</td><td>2026-09-30</td></tr>
+<tr><th scope="row">Operations report</th><td>Operations</td><td>Pending</td><td>2026-09-29</td></tr></tbody></table></div></section></main>
+<footer class="site-footer"><small>&copy; 2026 Enterprise Dashboard. Internal use.</small></footer>
+</div><dialog id="confirm-dialog" aria-labelledby="dialog-title"><div class="dialog-content">
+<h2 id="dialog-title">Dashboard help</h2><p>Use the sidebar to move between dashboard areas. Press Escape to close this dialog.</p>
+<div class="dialog-actions"><button type="button" class="secondary" data-close-dialog>Close</button></div></div></dialog><script src="../js/dashboard.js"></script></body></html>

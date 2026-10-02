@@ -1,126 +1,46 @@
-# Weather Service Foundation — Architecture
+# Enterprise Dashboard Foundation
 
-## Purpose
+Accessible multi-page static dashboard foundation using semantic HTML5 and WCAG-oriented patterns.
 
-This project is a maintainable full-stack foundation derived from an audit of a public weather service.
+## Pages
+- `index.html` - overview, metric cards, data table, modal dialog
+- `pages/reports.html` - accessible filter form and report table
+- `pages/profile.html` - validated profile form and status announcement
 
-## Boundaries
+## Accessibility
+- Skip links
+- Semantic landmarks
+- Native buttons, links, inputs, select, textarea, fieldset and legend
+- Explicit labels
+- Visible `:focus-visible`
+- Table row/column scopes
+- Native `<dialog>` modal
+- `aria-live` status messaging
+- Required/min/max/pattern/email validation
+- Responsive layout
 
-### Client
+## Validation
 
-Responsible for:
-- Rendering UI
-- User interaction
-- Keyboard accessibility
-- Form state
-- Presenting loading, error, and result states
+Use the W3C Nu HTML Checker or validator.w3.org with each HTML file. The source is designed to contain zero HTML syntax errors.
 
-The client should not contain provider-specific weather API logic.
+Example with the W3C validator service:
+1. Serve this directory with a local HTTP server.
+2. Open the validator.
+3. Validate `index.html`, `pages/reports.html`, and `pages/profile.html`.
+4. Confirm `0 errors`.
 
-### Server
+Example local server:
 
-Responsible for:
-- Request validation
-- External weather API access
-- Provider response mapping
-- Stable application DTOs
-- Error normalization
+```bash
+python3 -m http.server 8080
+```
 
-### Docs
-
-Contains:
-- Accessibility audit
-- Architecture decisions
-- Local development instructions
-
-### Tests
-
-Contains:
-- API tests
-- Accessibility tests
-- Integration tests
-
-## Project Structure
+Then open:
 
 ```text
-weather-service-foundation/
-├── client/
-├── server/
-├── docs/
-└── tests/
+http://localhost:8080/
 ```
 
-## First Vertical Slice
+## Important note
 
-```text
-Search location
-      |
-      v
-Client
-      |
-      v
-GET /api/weather
-      |
-      v
-Server validation
-      |
-      v
-Weather service
-      |
-      v
-External weather provider
-      |
-      v
-Application DTO
-      |
-      v
-Client result
-```
-
-## Accessibility Principles
-
-1. Prefer semantic HTML.
-2. Use native controls before custom widgets.
-3. Every form control needs an accessible name.
-4. Keyboard focus must remain visible.
-5. Dynamic results need an appropriate announcement strategy.
-6. Visual information must have an equivalent non-visual representation when it carries meaning.
-7. Avoid unnecessary ARIA.
-
-## Local Setup
-
-Install dependencies from the repository root:
-
-```bash
-npm install
-```
-
-Run the client:
-
-```bash
-npm run dev:client
-```
-
-Run the server:
-
-```bash
-npm run dev:server
-```
-
-Run tests:
-
-```bash
-npm test
-```
-
-Run Lighthouse:
-
-```bash
-npx lighthouse https://weather.com   --only-categories=accessibility,performance,best-practices,seo   --output=html   --output-path=./docs/lighthouse-report.html
-```
-
-## Architectural Rule
-
-The frontend consumes application-owned contracts. It should not depend directly on the schema of an external weather provider.
-
-This makes provider replacement, testing, validation, and future feature development significantly easier.
+A validator can establish markup conformance, but it cannot prove full WCAG 2.1 conformance. Keyboard testing, screen-reader testing, color/contrast checks, and interaction testing are still required.
