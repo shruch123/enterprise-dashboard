@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Manage custom inventory"><title>Inventory - Enterprise Dashboard</title>
+<link rel="stylesheet" href="../css/dashboard.css"><link rel="stylesheet" href="../css/capstone.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="app-shell">
+<header class="site-header"><a class="brand" href="../index.html">Enterprise Dashboard</a>
+<div class="header-actions"><a href="profile.html">Account</a><button type="button" data-open-dialog aria-haspopup="dialog">Help</button></div></header>
+<aside class="sidebar"><h2>Workspace</h2><nav aria-label="Dashboard navigation"><ul><li><a href="../index.html">Overview</a></li><li><a href="reports.html">Reports</a></li><li><a href="profile.html">Profile</a></li></ul></nav></aside>
+<main class="main" id="main-content"><header class="page-header"><div><h1>Inventory</h1><p>Create, edit, and delete custom products. They appear in the Overview catalog.</p></div></header>
+<section class="card" aria-labelledby="form-heading"><h2 id="form-heading">Product details</h2>
+<form id="product-form"><input type="hidden" name="id"><fieldset><legend>Product</legend><div class="form-grid">
+<div class="field"><label for="title">Title</label><input id="title" name="title" type="text" required minlength="2" maxlength="80"></div>
+<div class="field"><label for="category">Category</label><input id="category" name="category" type="text" required minlength="2" maxlength="40"></div>
+<div class="field"><label for="price">Price (USD)</label><input id="price" name="price" type="number" required min="0" step="0.01"></div>
+<div class="field"><label for="stock">Stock</label><input id="stock" name="stock" type="number" required min="0" step="1"></div>
+<div class="field full"><label for="thumbnail">Image URL (optional)</label><input id="thumbnail" name="thumbnail" type="url"></div>
+<div class="field full"><label for="description">Description</label><textarea id="description" name="description" rows="3" required maxlength="300"></textarea></div>
+</div></fieldset>
+<p id="crud-status" class="status" role="status" aria-live="polite"></p>
+<div class="inline-actions"><button type="submit">Add product</button><button type="button" class="secondary" id="cancel-edit">Cancel edit</button></div></form></section>
+<section style="margin-top:1.5rem" aria-labelledby="inv-heading"><h2 id="inv-heading">Custom products</h2>
+<div class="table-wrap"><table><caption>Custom inventory</caption><thead><tr><th scope="col">Title</th><th scope="col">Category</th><th scope="col">Price</th><th scope="col">Stock</th><th scope="col">Actions</th></tr></thead><tbody id="inventory-body"></tbody></table></div></section></main>
+<footer class="site-footer"><small>&copy; 2026 Enterprise Dashboard. Internal use.</small></footer></div>
+<dialog id="confirm-dialog" aria-labelledby="dialog-title"><div class="dialog-content"><h2 id="dialog-title">Dashboard help</h2><p>Admins can add, edit, and delete products. Press Escape to close this dialog.</p><div class="dialog-actions"><button type="button" class="secondary" data-close-dialog>Close</button></div></div></dialog>
+<script src="../js/auth.js"></script><script src="../js/crud.js"></script><script src="../js/dashboard.js"></script></body></html>

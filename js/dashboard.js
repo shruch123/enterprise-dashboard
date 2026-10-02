@@ -155,7 +155,7 @@ async function fetchProducts() {
       throw new Error("The product service returned an unexpected response.");
     }
 
-    state.products = payload.products;
+    state.products = [...payload.products, ...loadCustomProducts()];
     state.error = null;
 
     renderCategoryTabs();
@@ -444,4 +444,13 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value);
+}
+
+function loadCustomProducts() {
+  try {
+    const list = JSON.parse(localStorage.getItem("enterprise-dashboard-custom-products") || "[]");
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
 }

@@ -1,0 +1,6 @@
+.user-chip{font-size:.875rem;opacity:.85}
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:1rem}
+.login-wrap .card{width:100%;max-width:26rem}
+.login-wrap .field{margin-bottom:1rem}
+.demo-creds{font-size:.875rem}
+.inline-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
