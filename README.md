@@ -44,3 +44,16 @@ http://localhost:8080/
 ## Important note
 
 A validator can establish markup conformance, but it cannot prove full WCAG 2.1 conformance. Keyboard testing, screen-reader testing, color/contrast checks, and interaction testing are still required.
+
+## Live data layer
+
+The overview page now uses asynchronous ES6+ JavaScript and the public DummyJSON products API. It includes:
+
+- `fetch()` + `async/await` with an `AbortController` timeout
+- dynamic search, category tabs, and sorting
+- skeleton loading UI
+- accessible error and status messaging
+- `localStorage`-backed cart state
+- DOM updates without full-page reloads
+
+See `docs/async-data-state.md` for the implementation notes.
